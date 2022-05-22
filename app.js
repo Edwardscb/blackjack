@@ -37,9 +37,9 @@ cardArr.push(newCard);
 }
 
 class Player {
-constructor(name, playerCards = [], playerTotal =[]) {
-this.name = name; this.playerCards = playerCards;
-this.playerTotal = playerTotal}
+    constructor(name, playerCards = [], playerTotal =[]) {
+    this.name = name; this.playerCards = playerCards;
+    this.playerTotal = playerTotal}
 
 //gets an item from the array at random
 //and creates then assigns it to a div
@@ -88,7 +88,7 @@ let total = 0;
 for (let i = 0; i < this.playerTotal.length; i++) {
 total = this.playerTotal[i] + total;
 }
-
+//checks for exactly 21
 if (total == 21) {
 setTimeout(() => {
 alert(`${this.name} wins!`)}, 350);
@@ -101,6 +101,7 @@ newHand.classList.toggle("hidden");
 } else { newGame.classList.toggle("hidden");
 }
 }
+//checks for a bust
 if (total > 21) {
 setTimeout(() => {
 alert(`${this.name} is busted! Other player wins!`)}, 350)
@@ -138,18 +139,11 @@ if (total >  21) {return 1}
 else {return 11}
 };
 
-
+//removes all cards from the DOM and clears the arrays that have cards and totals for each player
+//then it clicks the start button and alerts the player of whose turn it is
 newHand.addEventListener("click", (e) => {
-let playedCards = document.getElementsByClassName("p1card");
-let playedCardss = document.getElementsByClassName("p2card");
-let arr = Array.from(playedCards);
-let arrr = Array.from(playedCardss);
-for (let i = 0; i < arr.length; i++) {
-arr[i].setAttribute("class", "hidden");
-}
-for (let i = 0; i < arrr.length; i++) {
-arrr[i].setAttribute("class", "hidden")
-}
+let playedCards = document.querySelectorAll("#playedCard");
+playedCards.forEach(e => e.remove());
 
 p1.playerCards.length = 0;
 p1.playerTotal.length = 0;
@@ -161,7 +155,7 @@ newHand.classList.toggle("hidden");
 alert(`${curr_player.name} its your turn`);
 
 });
-
+//compares player 1 and player 2 totals when both of them have clicked stand
 function checkForWinner() {
 let p1Score = 0;
 let p2Score = 0;

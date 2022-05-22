@@ -1,0 +1,44 @@
+body
+{
+display: grid;
+grid-template-columns: 100px 100px 100px;
+grid-template-rows: 60px 60px 200px 200px 200px;
+
+}
+
+.card {
+max-height: 160px;
+max-width: 100px;
+}
+
+.p1card {
+grid-row-start: 3;
+}
+
+.p2card {
+grid-row-start: 4;
+}
+
+.hit {
+grid-column: 1;
+grid-row: 2;
+}
+
+.stand {
+grid-column: 2;
+grid-row: 2;
+}
+
+.newHand {
+grid-row: 2;
+}
+
+.greet {
+font-size: 18px;
+grid-column-start: 1;
+grid-column-end: 4;
+}
+
+.hidden {
+display: none
+}

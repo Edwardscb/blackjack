@@ -2,7 +2,8 @@
 Blackjack game I made over the weekend while bored at the lake.
 
 They had no internet connection so I decided to see if I could make this without looking at any online resources.
-Made minor adjustments once home - like adding comments.  Decided to leave it as-is for now.
+Made minor adjustments once home - like adding comments and instead of using my hidden class for cards that had been played and were no 
+longer needed - I made a loop to just remove them from the DOM.  Decided to leave it as-is for now.
 
 Made on my Samsung Galaxy S8 using Droidscript
 
